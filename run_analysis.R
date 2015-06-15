@@ -52,17 +52,22 @@ Activities_Count = length(activities[,1])
 data_column_count = dim(tidy_data)[2]
 final_output = tidy_data[1:(Subjects_Count * Activities_Count),]
 
+## Loop through each subject and each activity to calculate the average
+
 row = 1
 for (s in 1:Subjects_Count) {
   for (a in 1:Activities_Count) {
     final_output[row, 1] = Subjects[s]
     final_output[row, 2] = activities[a, 2]
-    tmp <-
-      tidy_data[tidy_data$subject == s &
-                tidy_data$activity == activities[a, 2],]
+    tmp <- tidy_data[tidy_data$subject == s & tidy_data$activity == activities[a, 2],]
     final_output[row, 3:data_column_count] <- colMeans(tmp[, 3:data_column_count])
     row = row + 1
   }
 }
+
+## Write the tidy data file with average in current working directory
+
 write.table(final_output, "final_output_avg.txt", row.name = FALSE)
+
+## Remove Objects from the Environment
 remove(list = ls())
