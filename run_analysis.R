@@ -44,7 +44,7 @@ tidy_data <- cbind(Subject, Label, Data_Col_Filtered)
 write.table(tidy_data, "merged_clean_data.txt", row.name = FALSE)
 
 
-# 5. Creates a 2nd, independent tidy data set with the average of each variable for each activity and each subject.
+# 5. Creates a 2nd independent tidy data set with the average of each variable for each activity and each subject.
 
 Subjects = unique(Subject)[,1]
 Subjects_Count = length(Subjects)
