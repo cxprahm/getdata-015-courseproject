@@ -4,7 +4,7 @@ Course project for Getting and Cleaning Data
 Dataset: 
 Download the file from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 
-Copy the unzipped fodler, UCI HAR Dataset, into the currect working directory. The R is written to understand that directory structure.
+Copy the unzipped fodler, UCI HAR Dataset, into the currect working directory. The R code is adjusted to accomodate that directory structure.
 
 You should create one R script called run_analysis.R that does the following: 
 
